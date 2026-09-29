@@ -1,0 +1,124 @@
+/* src/App.css */
+
+.chat-container {
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.messages-list {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  display: flex;
+  /* Включаем флекс для списка */
+  flex-direction: column;
+  gap: 12px;
+  /* Расстояние между сообщениями */
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 70%;
+  box-sizing: border-box;
+}
+
+/* Выравнивание самих пузырей */
+.message.system {
+  background-color: #eef2f5;
+  color: #333;
+  align-self: flex-start;
+  /* Слева */
+}
+
+.message.user {
+  background-color: #dcf8c6;
+  color: #000;
+  align-self: flex-end;
+  /* Справа */
+}
+
+/* Контейнер для текста и времени */
+.message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стиль времени (общий) */
+.time {
+  margin-top: 6px;
+  /* Отступ от текста */
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* ВАЖНО: Выравнивание времени ВНУТРИ пузыря */
+
+/* Для системного (серого) пузыря: время по левому краю (по умолчанию) */
+.message.system .time {
+  text-align: left;
+}
+
+/* Для пользовательского (зелёного) пузыря: время по правому краю */
+.message.user .time {
+  text-align: right;
+}
+
+/* Поле ввода и кнопка */
+.input-area {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-area input:focus {
+  border-color: #007bff;
+}
+
+.input-area button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-area button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.input-area button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 8px;
+  background: #ffe6e6;
+  margin: 10px;
+  border-radius: 4px;
+}
